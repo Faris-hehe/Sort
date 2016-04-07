@@ -18,3 +18,24 @@ function quickSort( arr ){
     }
     return quickSort(left).concat([pivot], quickSort(right));
 }
+
+function arrTriangle(x){
+    var arr=[];
+    for(var i=1;i<=x;i=i+2){
+        arr.push(i);
+    }
+    var arrNew = arr.slice(0);
+    var arrReverse = reverseNew(arrNew);
+    arr.pop();
+    return( arr.concat(arrReverse ) )
+}
+
+function reverseNew(arrNew){
+    var temp = 0;
+    for(var i=0;i<Math.floor(arrNew.length/2);i++){
+        temp = arrNew[i];
+        arrNew[i] = arrNew[arrNew.length-i-1];
+        arrNew[arrNew.length-i-1] = temp;
+    }
+    return arrNew;
+}
